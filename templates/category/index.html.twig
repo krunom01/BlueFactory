@@ -1,15 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="row mt-3">
+            <div class="col">
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
     Number of Categories: {{ categories|length }} <br>
-    <a href="" ><button type="button" class="btn btn-primary">Add new Category</button></a>
+    <a href="{{ path('newCategory')}}" ><button type="button" class="btn btn-success">Add new Category</button></a>
     <table class="table">
         <thead>
         <tr>
             <th></th>
             <th>Title</th>
             <th>Slug</th>
-            <th>Edit</th>
+            <th></th>
             <th>Delete</th>
         </tr>
         </thead>
@@ -21,8 +30,8 @@
                 <td>{{ count }}</td>
                 <td>{{ category.title }}</td>
                 <td>{{ category.slug }}</td>
-                <td></td>
-                <td></td>
+                <td><a href="{{ path('editCategory', {'id': category.id})}}" ><button type="button" class="btn btn-primary">Edit</button></a></td>
+                <td><a href="{{ path('deleteCategory', {'id': category.id})}}" ><button type="button" class="btn btn-danger">Delete</button></a></td>
 
             </tr>
         {% else %}

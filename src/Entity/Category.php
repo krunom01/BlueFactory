@@ -20,11 +20,19 @@ class Category
 
     /**
      * @ORM\Column(type="string", length=20)
+     * @Symfony\Component\Validator\Constraints\Regex(
+     * pattern     = "/^[a-z ćčžđš A-Z-]+$/i",
+     *  message     = "Letters only")
+     * @Symfony\Component\Validator\Constraints\NotBlank(message="Please insert Category title")
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=10, unique=true)
+     * @Symfony\Component\Validator\Constraints\Regex(
+     * pattern     = "/^[a-z ćčžđš A-Z-]+$/i",
+     *  message     = "Letters only")
+     * @Symfony\Component\Validator\Constraints\NotBlank(message="Please insert Category slug")
      */
     private $slug;
 
