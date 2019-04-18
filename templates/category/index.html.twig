@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    Number of Categories: {{ categories|length }} <br>
+    <a href="" ><button type="button" class="btn btn-primary">Add new Category</button></a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Slug</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% set count = 0 %}
+        {% for category in categories %}
+            {% set count = count + 1 %}
+            <tr>
+                <td>{{ count }}</td>
+                <td>{{ category.title }}</td>
+                <td>{{ category.slug }}</td>
+                <td></td>
+                <td></td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
