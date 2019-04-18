@@ -31,7 +31,7 @@
                 <td>{{ category.title }}</td>
                 <td>{{ category.slug }}</td>
                 <td><a href="{{ path('editCategory', {'id': category.id})}}" ><button type="button" class="btn btn-primary">Edit</button></a></td>
-                <td><a href="{{ path('deleteCategory', {'id': category.id})}}" ><button type="button" class="btn btn-danger">Delete</button></a></td>
+                <td><a href="{{ path('deleteCategory', {'id': category.id})}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
 
             </tr>
         {% else %}
