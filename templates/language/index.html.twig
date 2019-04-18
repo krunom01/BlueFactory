@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="row mt-3">
+            <div class="col">
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    Supported languages are listed in :<a href="https://cloud.google.com/translate/docs/languages" rel="nofollow">Google API docs</a><br>
+    Number of Languages: {{ languages|length }} <br>
+    <a href="{{ path('newLanguage')}}" ><button type="button" class="btn btn-success">Add new Language</button></a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% set count = 0 %}
+        {% for language in languages %}
+            {% set count = count + 1 %}
+            <tr>
+                <td>{{ count }}</td>
+                <td>{{ language.name }}</td>
+                <td>{{ language.code }}</td>
+                <td><a href="{{ path('deleteLanguage', {'id': language.id})}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
