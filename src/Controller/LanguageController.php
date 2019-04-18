@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\LanguagesRepository;
 use App\Form\LanguagesFormType;
 use App\Entity\Languages;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class LanguageController extends AbstractController
 {
@@ -31,6 +32,7 @@ class LanguageController extends AbstractController
      * @param         Request $request
      * @param         EntityManagerInterface $entityManager
      * @return Response
+     * @throws
      */
     public function newLanguage(
         Request $request,
@@ -40,10 +42,18 @@ class LanguageController extends AbstractController
         $form = $this->createForm(LanguagesFormType::class, $language);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($language);
-            $entityManager->flush();
-            $this->addFlash('success', 'Successfully added new Language!');
-            return $this->redirectToRoute('languages');
+            $tr = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
+            $tr->setTarget($form->get('code')->getData());
+            $word = $tr->translate('ball');
+            if($word != "") {
+                $entityManager->persist($language);
+                $entityManager->flush();
+                $this->addFlash('success', 'Successfully added new Language!');
+                return $this->redirectToRoute('languages');
+            } else {
+                $this->addFlash('success', 'Wrong language!');
+                return $this->redirectToRoute('newLanguage');
+            }
         }
         return $this->render(
             'language/new.html.twig',
