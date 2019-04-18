@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Form\CategoryFormType;
 use App\Entity\Category;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 
 class CategoryController extends AbstractController
@@ -32,6 +33,7 @@ class CategoryController extends AbstractController
      * @param         Request $request
      * @param         EntityManagerInterface $entityManager
      * @return Response
+     * @throws
      */
     public function newCategory(
         Request $request,
@@ -43,6 +45,9 @@ class CategoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($category);
             $entityManager->flush();
+            $tr = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
+            $tr->setTarget('hr');
+            $asd = $tr->translate('dsfsdff');
             $this->addFlash('success', 'Successfully added new Category!');
             return $this->redirectToRoute('categories');
         }
@@ -67,6 +72,9 @@ class CategoryController extends AbstractController
     ) {
         $form = $this->createForm(CategoryFormType::class, $category);
         $form->handleRequest($request);
+        $nesto = $form->get('title')->getData();
+
+
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($category);
             $entityManager->flush();
