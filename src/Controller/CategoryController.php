@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Form\CategoryFormType;
 use App\Entity\Category;
+use App\Entity\CategoryTrans;
 use Stichoza\GoogleTranslate\GoogleTranslate;
 
 
@@ -32,12 +33,14 @@ class CategoryController extends AbstractController
      * @Route("/categories/new", name="newCategory")
      * @param         Request $request
      * @param         EntityManagerInterface $entityManager
+     * @param         CategoryTrans $categorytrans
      * @return Response
      * @throws
      */
     public function newCategory(
         Request $request,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface $entityManager,
+        CategoryTrans $categorytrans
     ) {
         $category = new Category;
         $form = $this->createForm(CategoryFormType::class, $category);
@@ -45,6 +48,8 @@ class CategoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($category);
             $entityManager->flush();
+
+
             $tr = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
             $tr->setTarget('hr');
             $asd = $tr->translate('dsfsdff');
