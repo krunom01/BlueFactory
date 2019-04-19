@@ -45,7 +45,7 @@ class LanguageController extends AbstractController
             $tr = new GoogleTranslate(); // Translates to 'en' from auto-detected language by default
             $tr->setTarget($form->get('code')->getData());
             $word = $tr->translate('ball');
-            if($word != "") {
+            if($word != "ball") { // Dirty way of Validation
                 $entityManager->persist($language);
                 $entityManager->flush();
                 $this->addFlash('success', 'Successfully added new Language!');

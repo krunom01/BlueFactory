@@ -72,9 +72,8 @@ class CategoryController extends AbstractController
     ) {
         $form = $this->createForm(CategoryFormType::class, $category);
         $form->handleRequest($request);
-        $nesto = $form->get('title')->getData();
 
-
+        $nesto = $category->getCategoryTrans();
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($category);
             $entityManager->flush();

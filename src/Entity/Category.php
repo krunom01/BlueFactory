@@ -36,6 +36,12 @@ class Category
      */
     private $slug;
 
+    /**
+     * @Doctrine\ORM\Mapping\OneToMany(targetEntity="App\Entity\CategoryTrans",
+     * mappedBy="category", cascade={"persist", "remove"})
+     */
+    private $categoryTrans;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -63,5 +69,21 @@ class Category
         $this->slug = $slug;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategoryTrans()
+    {
+        return $this->categoryTrans;
+    }
+
+    /**
+     * @param mixed $categoryTrans
+     */
+    public function setCategoryTrans($categoryTrans): void
+    {
+        $this->categoryTrans = $categoryTrans;
     }
 }
