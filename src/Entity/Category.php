@@ -5,12 +5,15 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CategoryRepository")
  * @UniqueEntity(fields={"slug"}, message="There is already an category with this slug")
  */
 class Category
 {
+
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -41,6 +44,12 @@ class Category
      * mappedBy="category", cascade={"persist", "remove"})
      */
     private $categoryTrans;
+    /**
+     * @Doctrine\ORM\Mapping\OneToMany(targetEntity="App\Entity\Meal",
+     * mappedBy="category", cascade={"persist", "remove"})
+     */
+    private $meals;
+
 
     public function getId(): ?int
     {
@@ -72,18 +81,19 @@ class Category
     }
 
     /**
-     * @return mixed
-     */
-    public function getCategoryTrans()
-    {
-        return $this->categoryTrans;
-    }
-
-    /**
      * @param mixed $categoryTrans
      */
     public function setCategoryTrans($categoryTrans): void
     {
         $this->categoryTrans = $categoryTrans;
     }
+    /**
+     * @param mixed $meals
+     */
+    public function setMeals($meals): void
+    {
+        $this->meals = $meals;
+    }
+
+
 }

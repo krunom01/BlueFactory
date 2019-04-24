@@ -3,12 +3,11 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Category;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\CategoryTransRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\TagTransRepository")
  */
-class CategoryTrans
+class TagTrans
 {
     /**
      * @ORM\Id()
@@ -18,9 +17,9 @@ class CategoryTrans
     private $id;
 
     /**
-     * @Doctrine\ORM\Mapping\ManyToOne(targetEntity="App\Entity\Category", inversedBy="categoryTrans")
+     * @Doctrine\ORM\Mapping\ManyToOne(targetEntity="App\Entity\Tag", inversedBy="tagTrans")
      */
-    private $category;
+    private $tag;
 
     /**
      * @ORM\Column(type="string", length=2)
@@ -36,21 +35,17 @@ class CategoryTrans
     {
         return $this->id;
     }
-    /**
-     * @return mixed
-     */
 
-    public function getCategory(): ?int
+    public function getTag(): ?int
     {
-        return $this->category;
+        return $this->tag;
     }
-    /**
-     * @param Category $category
-     */
 
-    public function setCategory(Category $category)
+    public function setTag(int $tag): self
     {
-        $this->category = $category;
+        $this->tag = $tag;
+
+        return $this;
     }
 
     public function getLanguageCode(): ?string
@@ -58,7 +53,7 @@ class CategoryTrans
         return $this->languageCode;
     }
 
-    public function setLanguageCode($languageCode): self
+    public function setLanguageCode(string $languageCode): self
     {
         $this->languageCode = $languageCode;
 
