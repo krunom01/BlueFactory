@@ -2,30 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="891956db-5086-4b9e-89c5-ffda20ffeabe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1e1c17a5-5288-41f7-b057-6435cbba60b1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7c067f4c-1c9e-4892-a7c3-29ffc477bc24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e0f4134d-d168-42d4-b408-2526fed94a7c.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LanguageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LanguageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/FakerFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/FakerFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/CategoryTrans.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CategoryTrans.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190418011646.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190418213846.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190419061907.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/CategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CategoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/MealTrans.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/MealTrans.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Tag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CategoryTransRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CategoryTransRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MealRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MealRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -118,44 +103,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/CategoryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="151" column="30" selection-start-line="151" selection-start-column="30" selection-end-line="151" selection-end-column="30" />
+            <state relative-caret-position="146">
+              <caret line="124" column="28" selection-start-line="124" selection-start-column="15" selection-end-line="124" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-747">
+              <caret line="404" column="19" selection-start-line="404" selection-start-column="19" selection-end-line="404" selection-end-column="19" />
               <folding>
-                <element signature="e#34#54#0#PHP" expanded="true" />
+                <element signature="e#34#84#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/TagMeal.php">
+        <entry file="file://$PROJECT_DIR$/src/Repository/MealRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+            <state relative-caret-position="369">
+              <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Tag.php">
+        <entry file="file://$PROJECT_DIR$/templates/home/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="73" column="26" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Meal.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="187" column="36" selection-start-line="187" selection-start-column="36" selection-end-line="187" selection-end-column="36" />
-              <folding>
-                <element signature="e#30#49#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="341">
+              <caret line="80" column="29" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -180,7 +162,6 @@
         <option value="$PROJECT_DIR$/templates/category/new.html.twig" />
         <option value="$PROJECT_DIR$/templates/category/edit.html.twig" />
         <option value="$PROJECT_DIR$/templates/category/index.html.twig" />
-        <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/templates/language/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/language/new.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Languages.php" />
@@ -192,27 +173,29 @@
         <option value="$PROJECT_DIR$/src/Kernel.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/7c067f4c-1c9e-4892-a7c3-29ffc477bc24/console.sql" />
         <option value="$PROJECT_DIR$/.env.local" />
-        <option value="$PROJECT_DIR$/src/Controller/HomeController.php" />
         <option value="$PROJECT_DIR$/src/Service/Service.php" />
-        <option value="$PROJECT_DIR$/src/Entity/MealTrans.php" />
         <option value="$PROJECT_DIR$/src/Entity/Ingredient.php" />
         <option value="$PROJECT_DIR$/src/Entity/IngredeintTrans.php" />
-        <option value="$PROJECT_DIR$/src/Entity/CategoryTrans.php" />
         <option value="$PROJECT_DIR$/src/Entity/TagTrans.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/FakerFixtures.php" />
         <option value="$PROJECT_DIR$/src/Repository/CategoryRepository.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Category.php" />
         <option value="$PROJECT_DIR$/src/Entity/IngredientMeal.php" />
-        <option value="$PROJECT_DIR$/src/Repository/MealRepository.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/93d91089-5e6e-4df9-ba35-41e9522fe345/console_1.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/93d91089-5e6e-4df9-ba35-41e9522fe345/console.sql" />
-        <option value="$PROJECT_DIR$/src/Entity/Tag.php" />
         <option value="$PROJECT_DIR$/src/Entity/TagMeal.php" />
         <option value="$PROJECT_DIR$/src/Entity/Meal.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Tag.php" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/Entity/Category.php" />
+        <option value="$PROJECT_DIR$/src/Repository/CategoryTransRepository.php" />
+        <option value="$PROJECT_DIR$/src/Entity/CategoryTrans.php" />
+        <option value="$PROJECT_DIR$/src/Entity/MealTrans.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/93d91089-5e6e-4df9-ba35-41e9522fe345/console.sql" />
         <option value="$PROJECT_DIR$/src/Controller/CategoryController.php" />
+        <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Repository/MealRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/HomeController.php" />
       </list>
     </option>
   </component>
@@ -439,12 +422,12 @@
       <workItem from="1555578911993" duration="34655000" />
       <workItem from="1556005355529" duration="42962000" />
       <workItem from="1556066099187" duration="16691000" />
-      <workItem from="1556113647550" duration="8372000" />
+      <workItem from="1556113647550" duration="43067000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111237000" />
+    <option name="totallyTimeSpent" value="145932000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -465,20 +448,20 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32880434" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4993565" visible="true" weight="0.38722825" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4993565" visible="true" weight="0.3790761" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32971507" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32880434" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32880434" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5006435" side_tool="true" weight="0.38722825" />
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.32880434" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4993565" weight="0.32744566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.2007722" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.14478764" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27413127" />
@@ -506,48 +489,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Controller/CategoryController.php</url>
-          <line>152</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/packages/doctrine.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/routing.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-215" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/validator.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/console">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/dev/bazinga_faker.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://7c067f4c-1c9e-4892-a7c3-29ffc477bc24/schema/test_blue/table/category_trans" />
     <entry file="file://$PROJECT_DIR$/src/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -580,13 +522,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Service/Service.php" />
-    <entry file="file://$PROJECT_DIR$/src/Entity/Languages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/LanguageController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -628,30 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/MealTrans.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="84" selection-start-line="19" selection-start-column="84" selection-end-line="19" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/IngredeintTrans.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-484">
-          <caret line="19" column="90" selection-start-line="19" selection-start-column="90" selection-end-line="19" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/CategoryTrans.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-          <folding>
-            <element signature="e#30#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Ingredient.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -683,20 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/languages">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/category_trans">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/IngredientMeal.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="662">
@@ -711,44 +608,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/MealRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <element signature="e#34#80#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/debug/ErrorHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="523" selection-start-line="523" selection-end-line="523" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-kernel/HttpKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="152" selection-start-line="152" selection-end-line="152" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-          <folding>
-            <element signature="e#30#62#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -766,10 +629,165 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/ingredient">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="370">
+            <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/93d91089-5e6e-4df9-ba35-41e9522fe345/console_2.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/TagMealRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/TagMeal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/languages">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-kernel/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="199" selection-start-line="199" selection-end-line="199" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/tag">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Tag.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-210">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/category">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/category_trans">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/CategoryTransRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/tag_trans">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/MealTrans.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/IngredeintTrans.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/ingredeint_trans">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/ingredient">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/meal_trans">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/93d91089-5e6e-4df9-ba35-41e9522fe345/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Languages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/CategoryTrans.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="55" column="35" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="35" />
+          <folding>
+            <element signature="e#30#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+          <folding>
+            <element signature="e#30#62#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -782,38 +800,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Entity/Meal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="370">
-            <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/category">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/tag">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+        <state relative-caret-position="1990">
+          <caret line="178" column="38" selection-start-line="178" selection-start-column="31" selection-end-line="178" selection-end-column="38" />
+          <folding>
+            <element signature="e#30#49#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/meal">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://93d91089-5e6e-4df9-ba35-41e9522fe345/schema/blue_test/table/meal_tag">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true">
@@ -831,50 +837,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/93d91089-5e6e-4df9-ba35-41e9522fe345/console.sql">
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+        <state relative-caret-position="132">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-kernel/Kernel.php">
+    <entry file="file://$PROJECT_DIR$/templates/home/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="199" selection-start-line="199" selection-end-line="199" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/TagMeal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Tag.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="73" column="26" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Meal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="187" column="36" selection-start-line="187" selection-start-column="36" selection-end-line="187" selection-end-column="36" />
-          <folding>
-            <element signature="e#30#49#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="341">
+          <caret line="80" column="29" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="151" column="30" selection-start-line="151" selection-start-column="30" selection-end-line="151" selection-end-column="30" />
+        <state relative-caret-position="146">
+          <caret line="124" column="28" selection-start-line="124" selection-start-column="15" selection-end-line="124" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-kernel/HttpKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/MealRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-747">
+          <caret line="404" column="19" selection-start-line="404" selection-start-column="19" selection-end-line="404" selection-end-column="19" />
           <folding>
-            <element signature="e#34#54#0#PHP" expanded="true" />
+            <element signature="e#34#84#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

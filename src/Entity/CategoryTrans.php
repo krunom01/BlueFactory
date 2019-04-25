@@ -40,7 +40,7 @@ class CategoryTrans
      * @return mixed
      */
 
-    public function getCategory(): ?int
+    public function getCategory()
     {
         return $this->category;
     }

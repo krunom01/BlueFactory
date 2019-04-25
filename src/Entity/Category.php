@@ -94,6 +94,4 @@ class Category
     {
         $this->meals = $meals;
     }
-
-
 }

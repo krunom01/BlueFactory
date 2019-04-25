@@ -19,4 +19,68 @@
         <input type="submit" value="filter by category">
     </form>
 </div>
+
+    <div class="example-wrapper">
+        Filter by tags:
+        <form action="{{ path('getJsonResultbyTags')}}" method="GET" id="myform">
+            <select name="tags[]" multiple>
+                {% for tag in tags %}
+                    <option class="filter-value" value="{{ tag.id }}">{{ tag.title }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="filter by tags">
+        </form>
+    </div>
+
+    <div class="example-wrapper">
+        Filter by Language:
+        <form action="{{ path('getJsonResultByLang')}}" method="GET">
+            <select name="lang">
+                {% for lang in languages %}
+                    <option value="{{ lang.code }}">{{ lang.code }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="filter by lang">
+        </form>
+    </div>
+    <div class="example-wrapper">
+        Get meals with:
+        <form action="{{ path('getJsonResultWith')}}" method="GET" id="myform">
+            <select name="with[]" multiple>
+                <option class="filter-value" value="category">Categories</option>
+                <option class="filter-value" value="tags">Tags</option>
+                <option class="filter-value" value="ingredients">Ingredients</option>
+            </select>
+            <input type="submit" value="get maeals with">
+        </form>
+    </div>
+
+
+    <div class="example-wrapper">
+        Get meals with:
+        <form action="{{ path('getJsonResultByGetParam')}}" method="GET" id="myform">
+            Lang;
+            <select name="lang">
+                {% for lang in languages %}
+                    <option value="{{ lang.code }}">{{ lang.code }}</option>
+                {% endfor %}
+            </select>
+            Tags:
+            <select name="tags[]" multiple>
+                {% for tag in tags %}
+                    <option class="filter-value" value="{{ tag.id }}">{{ tag.title }}</option>
+                {% endfor %}
+            </select>
+            with:
+            <select name="with[]" multiple>
+                <option class="filter-value" value="category">Categories</option>
+                <option class="filter-value" value="tags">Tags</option>
+                <option class="filter-value" value="ingredients">Ingredients</option>
+            </select>
+            Date:
+            <input type="date" name="date">
+            <input type="submit" value="By GET">
+        </form>
+    </div>
+
 {% endblock %}

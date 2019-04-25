@@ -18,7 +18,16 @@ class CategoryTransRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, CategoryTrans::class);
     }
-
+    public function getCategoryByLang($lancode)
+    {
+        return $this->createQueryBuilder('b')
+            ->select('b.translation')
+            ->innerJoin('App\Entity\Category', 'co', 'WITH', 'co.id = b.id')
+            ->andWhere('b.languageCode = :lancode')
+            ->setParameter('lancode', $lancode)
+            ->getQuery()
+            ->getResult();
+    }
     // /**
     //  * @return CategoryTrans[] Returns an array of CategoryTrans objects
     //  */

@@ -40,7 +40,7 @@ class MealTrans
      * @return mixed
      */
 
-    public function getMeal(): ?int
+    public function getMeal()
     {
         return $this->meal;
     }

@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Meal;
-use App\Entity\TagMeal;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\CategoryRepository;
@@ -14,13 +12,9 @@ use App\Form\CategoryFormType;
 use App\Entity\Category;
 use App\Repository\LanguagesRepository;
 use App\Repository\MealRepository;
-use App\Repository\TagMealRepository;
 use App\Entity\CategoryTrans;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
-use Symfony\Component\PropertyAccess\PropertyAccess;
+
 
 
 
@@ -129,52 +123,65 @@ class CategoryController extends AbstractController
 
     /**
      * @Route("getJsonResult", name="getJsonResult")
-     * @param                      CategoryRepository $reservationRepository
      * @param MealRepository $mealRepository
-     * @param LanguagesRepository $languages
-     * @param TagMealRepository $tagMealRepo
-     * @param                      Request $request
+     * @param Request $request
      * @return                                 Response
      */
-    public function getJsonResult(TagMealRepository $tagMealRepo,MealRepository $mealRepository,CategoryRepository $reservationRepository, Request $request,LanguagesRepository $languages)
+    public function getJsonResultByCategory(MealRepository $mealRepository,Request $request)
     {
-        $categoryJson = $mealRepository->findBy(['category' => 1]);
-        $tagmeal = $tagMealRepo->findBy(['meal' => 1]);
-        $propertyAccessor = PropertyAccess::createPropertyAccessor();
-        foreach($categoryJson as $key) {
-            $id = $key->getId();
-            $title = $key->getTitle();
-            $status = $key->getStatus();
-            $categoryID = $key->getCategory()->getId();
-            $categoryTitle = $key->getCategory()->getTitle();
-            $categorySlug = $key->getCategory()->getSlug();
 
-            //ovdje je problem
-            $mealsTag = $key->getTags()->getId();
-            if (count($mealsTag) != 0) {
-                foreach ($mealsTag as $tag) {
+        $categoryJson = $mealRepository->findBy(['category' => $request->get('category')]);
 
-                    $tags[] = array(
-                        'ID-Tag' => $tag->getId(),
-                        'Title-Tag' => $tag->getTitle(),
-                        'Slug-Tag' => $tag->getSlug(),
-                    );
+        if($categoryJson) {
+            foreach ($categoryJson as $key) {
+                $id = $key->getId();
+                $title = $key->getTitle();
+                $status = $key->getStatus();
+                $categoryID = $key->getCategory()->getId();
+                $categoryTitle = $key->getCategory()->getTitle();
+                $categorySlug = $key->getCategory()->getSlug();
+                $mealsTag = $key->getTags();
+                $mealsIngredient = $key->getIngredients();
+                $tags = [];
+                $ingredients = [];
+                if (count($mealsTag) != 0) {
+                    foreach ($mealsTag as $tag) {
+
+                        $tags[] = array(
+                            'ID-Tag' => $tag->getId(),
+                            'Title-Tag' => $tag->getTitle(),
+                            'Slug-Tag' => $tag->getSlug(),
+                        );
+                    }
                 }
-            }
-            $values[] = array(
-                'ID-Meal' => $id,
-                'Title-Meal' => $title,
-                'Status-Meal' => $status,
-                'Category' => array(
-                    'Category-ID' =>$categoryID,
-                    'Category-Title' => $categoryTitle,
-                    'Category-Slug'  => $categorySlug
-                ),
-                'Tags' => $tags
+                if (count($mealsIngredient) != 0) {
+                    foreach ($mealsIngredient as $ingredient) {
 
-            );
-        };
-        print_r($values);
+                        $ingredients[] = array(
+                            'ID-Tag' => $ingredient->getId(),
+                            'Title-Tag' => $ingredient->getTitle(),
+                            'Slug-Tag' => $ingredient->getSlug(),
+                        );
+                    }
+                }
+                $values[] = array(
+                    'ID-Meal' => $id,
+                    'Title-Meal' => $title,
+                    'Status-Meal' => $status,
+                    'Category' => array(
+                        'Category-ID' => $categoryID,
+                        'Category-Title' => $categoryTitle,
+                        'Category-Slug' => $categorySlug
+                    ),
+                    'Tags' => $tags,
+                    'Ingredients' => $ingredients
+
+                );
+            };
+            print_r($values);
+        } else {
+            $values = 0;
+        }
 
         return new JsonResponse(
             [
@@ -184,35 +191,5 @@ class CategoryController extends AbstractController
             ]
         );
     }
-    /**
-     * @var                                     $data
-     * @return                                  JsonResponse
-     */
-    private function returnJsonObjectShipping($data)
-    {
-        // setting up the serializer
-        $normalizers = [
-            new ObjectNormalizer()
-        ];
-        $encoders = [
-            new JsonEncoder()
-        ];
-        $serializer = new Serializer($normalizers, $encoders);
-        $jsonObject = $serializer->serialize(
-            $data,
-            'json',
-            [
-                'circular_reference_handler' => function ($shipping) {
-                    /**
-                     * @var $shipping TagMeal
-                     */
-                    return $shipping->getTag();
-                }
-            ]
-        );
-        return $jsonObject;
-    }
-
-
 
 }

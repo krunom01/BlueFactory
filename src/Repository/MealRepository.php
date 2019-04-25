@@ -30,6 +30,27 @@ class MealRepository extends ServiceEntityRepository
             ;
     }
 
+    public function getMealByTags($tag)
+    {
+        return $this->createQueryBuilder('b')
+            ->innerJoin('App\Entity\TagMeal', 'co', 'WITH', 'co.meal = b.id')
+            ->andWhere('co.tag IN (:tag)')
+            ->setParameter('tag', $tag)
+            ->getQuery()
+            ->getResult(\Doctrine\ORM\Query::HYDRATE_OBJECT);
+    }
+    public function getMealByTagsTime($tag,$time)
+    {
+        return $this->createQueryBuilder('b')
+            ->innerJoin('App\Entity\TagMeal', 'co', 'WITH', 'co.meal = b.id')
+            ->andWhere('co.tag IN (:tag)')
+            ->andWhere('b.created_at < :time')
+            ->setParameter('tag', $tag)
+            ->setParameter('time', $time)
+            ->getQuery()
+            ->getResult(\Doctrine\ORM\Query::HYDRATE_OBJECT);
+    }
+
     // /**
     //  * @return Meal[] Returns an array of Meal objects
     //  */
