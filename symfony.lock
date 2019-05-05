@@ -92,6 +92,9 @@
             "ref": "70062abc2cd58794d2a90274502f81b55cd9951b"
         }
     },
+    "egosun/symfony-4-code-sniffer": {
+        "version": "0.0.3"
+    },
     "fzaninotto/faker": {
         "version": "v1.8.0"
     },
@@ -109,6 +112,12 @@
     },
     "knplabs/doctrine-behaviors": {
         "version": "1.6.0"
+    },
+    "knplabs/knp-components": {
+        "version": "v1.3.10"
+    },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v3.0.0"
     },
     "monolog/monolog": {
         "version": "1.24.0"
@@ -148,6 +157,9 @@
             "version": "5.2",
             "ref": "fb7e19da7f013d0d422fa9bce16f5c510e27609b"
         }
+    },
+    "squizlabs/php_codesniffer": {
+        "version": "2.9.2"
     },
     "stichoza/google-translate-php": {
         "version": "v4.0.1"

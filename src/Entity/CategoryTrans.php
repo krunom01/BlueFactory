@@ -76,4 +76,5 @@ class CategoryTrans
 
         return $this;
     }
+
 }

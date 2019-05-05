@@ -1,3 +1,1 @@
 Blue Factory Task
-
-

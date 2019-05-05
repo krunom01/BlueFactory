@@ -76,4 +76,14 @@ class MealTrans
 
         return $this;
     }
+    public function getMealTrans()
+    {
+        return [
+            'ID-Meal' => $this->getMeal()->getId(),
+            'Meal-Title-Lang' => $this->getTranslation(),
+            'Status-Meal' => $this->getMeal()->getStatus(),
+
+        ];
+
+    }
 }

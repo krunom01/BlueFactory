@@ -2,10 +2,9 @@
 
 namespace App\Entity;
 
-use App\Entity\Tag;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MealRepository")
@@ -167,40 +166,59 @@ class Meal
 
         return $this;
     }
+
     /**
      * @param mixed $mealTrans
      */
-    public function setCategoryTrans($mealTrans): void
+    public function setMealsTrans($mealTrans): void
     {
         $this->mealTrans = $mealTrans;
     }
 
     /**
-     * @return ArrayCollection|TagMeal[]
+     * @return array
      */
     public function getTags()
     {
-        $tags = new ArrayCollection();
+        $tags = [];
         foreach ($this->tags as $int) {
             /**
              * @var TagMeal $int
              */
-            $tags[] = $int->getTag();
-        } return $tags;
+            $tags[] = [
+                'ID-Tag' => $int->getTag()->getId(),
+                'Title-Tag' => $int->getTag()->getTitle(),
+                'Slug-Tag' => $int->getTag()->getSlug(),
+            ];
+        }
+        if (empty($tags)) {
+            return null;
+        } else {
+            return $tags;
+        }
     }
 
     /**
-     * @return ArrayCollection|Ingredient[]
+     * @return array
      */
     public function getIngredients()
     {
-        $ingredients = new ArrayCollection();
+        $ingredients = [];
         foreach ($this->ingredients as $int) {
             /**
              * @var IngredientMeal $int
              */
-            $ingredients[] = $int->getIngredient();
-        } return $ingredients;
+            $ingredients[] = [
+                'ID-ingredients' => $int->getIngredient()->getId(),
+                'Title-ingredients' => $int->getIngredient()->getTitle(),
+                'Slug-ingredients' => $int->getIngredient()->getSlug(),
+            ];
+        }
+        if (empty($ingredients)) {
+            return null;
+        } else {
+            return $ingredients;
+        }
     }
     /**
      * @param ArrayCollection|IngredientMeal $intMeal
@@ -217,4 +235,36 @@ class Meal
             $this->ingredients[] = $newIntMeal;
         }
     }
+    /**
+     * @return array
+     */
+    public function getMealsByGet()
+    {
+
+        return [
+            'ID-Meal' => $this->getId(),
+            'Title-Meal' => $this->getTitle(),
+            'Status-Meal' => $this->getStatus(),
+            'Category' => [
+                'Category-ID' => $this->getCategory()->getId(),
+                'Category-Title' => $this->getCategory()->getTitle(),
+                'Category-Slug' => $this->getCategory()->getSlug()
+            ],
+            'Tags' => $this->getTags(),
+            'Ingridients' => $this->getIngredients()
+        ];
+    }
+    /**
+     * @return array
+     */
+    public function getMeal()
+    {
+
+        return [
+            'ID-Meal' => $this->getId(),
+            'Title-Meal' => $this->getTitle(),
+            'Status-Meal' => $this->getStatus(),
+        ];
+    }
+
 }
