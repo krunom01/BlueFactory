@@ -42,35 +42,6 @@ class Paths
         $this->url['query'] = $return;
     }
 
-    public function addQuery($get, $value)
-    {
-        $part = $get . "=" . $value;
-        $and = ($this->url['query'] == "?") ? "" : "&";
-        $this->url['query'] .= $and . $part;
-    }
-
-    public function checkQuery($get)
-    {
-        $parts = explode("&", $this->url['query']);
-
-        foreach ($parts as $p) {
-            $paramData = explode("=", $p);
-            if ($paramData[0] == $get)
-                return true;
-        }
-        return false;
-
-    }
-
-    public function buildQuery($get, $value)
-    {
-        if ($this->checkQuery($get))
-            $this->editQuery($get, $value);
-        else
-            $this->addQuery($get, $value);
-
-    }
-
     public function resetQuery()
     {
         $this->url = parse_url($_SERVER['REQUEST_URI']);
