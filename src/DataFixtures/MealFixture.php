@@ -3,16 +3,11 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Meal;
-use App\Entity\Category;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use App\Repository\MealRepository;
-use Doctrine\Common\DataFixtures\AbstractFixture;
-use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Nelmio\Alice\Loader\NativeLoader;
 
-class MealFixture extends Fixture implements OrderedFixtureInterface
+class MealFixture extends Fixture
 {
     /**
      * @param ObjectManager $manager
@@ -27,10 +22,5 @@ class MealFixture extends Fixture implements OrderedFixtureInterface
             $manager->persist($object);
         }
         $manager->flush();
-    }
-
-    public function getOrder()
-    {
-        return 200;
     }
 }

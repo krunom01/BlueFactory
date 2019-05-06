@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="891956db-5086-4b9e-89c5-ffda20ffeabe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/FakerFixtures.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CategoryTrans.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CategoryTrans.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/IngredeintTrans.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/IngredeintTrans.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Meal.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Meal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/TagTrans.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TagTrans.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MealRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MealRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TagMealRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TagMealRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/CategoryFixture.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/MealFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/MealFixture.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,38 +69,90 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="81" column="60" lean-forward="true" selection-start-line="81" selection-start-column="60" selection-end-line="81" selection-end-column="60" />
+            <state relative-caret-position="-1020">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
-                <element signature="e#34#84#0#PHP" expanded="true" />
+                <element signature="e#34#56#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Repository/MealRepository.php">
+        <entry file="das://b19ad072-16b3-4c19-8c66-4ddabffad479/schema/nedjelja_test/table/tag_meal">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true">
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://b19ad072-16b3-4c19-8c66-4ddabffad479/schema/nedjelja_test/table/meal">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true">
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DataFixtures/Fixtures.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+            <state relative-caret-position="-645">
+              <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DataFixtures/MealFixture.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
-                <element signature="e#34#54#0#PHP" expanded="true" />
+                <element signature="e#38#81#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Meal.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="265" column="48" selection-start-line="265" selection-start-column="48" selection-end-line="265" selection-end-column="48" />
-              <folding>
-                <element signature="e#30#62#0#PHP" expanded="true" />
-              </folding>
+        <entry file="das://b19ad072-16b3-4c19-8c66-4ddabffad479/schema/nedjelja_test/table/ingredient_meal">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true">
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://b19ad072-16b3-4c19-8c66-4ddabffad479/schema/nedjelja_test/table/category">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true">
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://b19ad072-16b3-4c19-8c66-4ddabffad479/schema/nedjelja_test/table/ingredeint_trans">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true">
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
@@ -135,10 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/index.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e0f4134d-d168-42d4-b408-2526fed94a7c/console.sql" />
-        <option value="$PROJECT_DIR$/templates/category/new.html.twig" />
-        <option value="$PROJECT_DIR$/templates/category/edit.html.twig" />
         <option value="$PROJECT_DIR$/templates/category/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/language/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/language/new.html.twig" />
@@ -174,7 +206,6 @@
         <option value="$PROJECT_DIR$/src/Entity/CategoryTrans.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/CategoryFixture.php" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/DataFixtures/MealFixture.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/fixtures.yml" />
         <option value="$PROJECT_DIR$/src/Entity/Category.php" />
         <option value="$PROJECT_DIR$/src/Entity/IngredeintTrans.php" />
@@ -185,7 +216,12 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b19ad072-16b3-4c19-8c66-4ddabffad479/console.sql" />
         <option value="$PROJECT_DIR$/src/Entity/Meal.php" />
         <option value="$PROJECT_DIR$/src/Repository/MealRepository.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Path.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Paths.php" />
+        <option value="$PROJECT_DIR$/src/customClass/Paths.php" />
+        <option value="$PROJECT_DIR$/src/Service/Paths.php" />
         <option value="$PROJECT_DIR$/src/Controller/HomeController.php" />
+        <option value="$PROJECT_DIR$/src/DataFixtures/MealFixture.php" />
       </list>
     </option>
   </component>
@@ -331,11 +367,6 @@
             <path>
               <item name="symfony" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
               <item name="fixtures" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -347,31 +378,13 @@
               <item name="symfony" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DataFixtures" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="symfony" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="symfony" type="b2602c69:ProjectViewProjectNode" />
@@ -397,6 +410,9 @@
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/customClass" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/language" />
       <recent name="$PROJECT_DIR$" />
@@ -439,12 +455,12 @@
       <workItem from="1556782882089" duration="4059000" />
       <workItem from="1556781102379" duration="56597000" />
       <workItem from="1557046043907" duration="2704000" />
-      <workItem from="1557049107282" duration="38050000" />
+      <workItem from="1557049107282" duration="50948000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261223000" />
+    <option name="totallyTimeSpent" value="274121000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -465,7 +481,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32880434" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.498713" visible="true" weight="0.3790761" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.498713" weight="0.3790761" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32880434" />
@@ -474,11 +490,11 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32880434" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.501287" side_tool="true" weight="0.3790761" />
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.32880434" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4993565" weight="0.32608697" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.4993565" visible="true" weight="0.32608697" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.2104247" />
+      <window_info anchor="right" id="Database" order="3" weight="0.20334621" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27413127" />
@@ -507,9 +523,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/console">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/bin/phpcbf">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -562,13 +575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
           <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/MealTrans.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1115">
-          <caret line="82" column="28" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -663,40 +669,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/CategoryFixture.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#36#60#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/CategoryTrans.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
-          <folding>
-            <element signature="e#30#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Ingredient.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="37" column="28" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/MealFixture.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="20" />
-          <folding>
-            <element signature="e#37#57#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -754,15 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://b19ad072-16b3-4c19-8c66-4ddabffad479/schema/nedjelja_test/table/ingredeint_trans">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://b19ad072-16b3-4c19-8c66-4ddabffad479/schema/nedjelja_test/table/meal_trans">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -795,26 +762,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://b19ad072-16b3-4c19-8c66-4ddabffad479/schema/nedjelja_test/table/ingredient_meal">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/TagMealRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/Fixtures.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -825,26 +776,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://b19ad072-16b3-4c19-8c66-4ddabffad479/schema/nedjelja_test/table/category">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/QueryBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
           <caret line="1187" column="20" selection-start-line="1187" selection-start-column="20" selection-end-line="1187" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-kernel/HttpKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>
@@ -858,22 +793,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/MealRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
-          <folding>
-            <element signature="e#34#54#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://b19ad072-16b3-4c19-8c66-4ddabffad479/schema/nedjelja_test/table/tag">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true">
             <filter text="" />
           </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/MealRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+          <folding>
+            <element signature="e#34#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/Paths.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/CategoryTrans.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+          <folding>
+            <element signature="e#30#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/MealTrans.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="82" column="28" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-kernel/HttpKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1020">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#34#56#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -895,12 +871,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
+    <entry file="das://b19ad072-16b3-4c19-8c66-4ddabffad479/schema/nedjelja_test/table/ingredient_meal">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://b19ad072-16b3-4c19-8c66-4ddabffad479/schema/nedjelja_test/table/category">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://b19ad072-16b3-4c19-8c66-4ddabffad479/schema/nedjelja_test/table/ingredeint_trans">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/Fixtures.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="81" column="60" lean-forward="true" selection-start-line="81" selection-start-column="60" selection-end-line="81" selection-end-column="60" />
+        <state relative-caret-position="-645">
+          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/CategoryFixture.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
-            <element signature="e#34#84#0#PHP" expanded="true" />
+            <element signature="e#36#60#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/MealFixture.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#38#81#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

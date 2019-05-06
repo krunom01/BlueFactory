@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Service\Paths;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,10 +11,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\MealRepository;
 use App\Repository\CategoryTransRepository;
 use App\Repository\MealTransRepository;
-use App\Repository\TagMealRepository;
 use App\Repository\TagTransRepository;
 use App\Repository\IngredeintTransRepository;
 use Knp\Component\Pager\PaginatorInterface;
+
 
 class HomeController extends AbstractController
 {
@@ -26,7 +27,6 @@ class HomeController extends AbstractController
      * @param TagTransRepository $tagTransRepository
      * @param IngredeintTransRepository $ingredientTransRepository
      * @param PaginatorInterface $paginator
-     * @param TagMealRepository $tags
      * @return Response
      */
     public function index(
@@ -36,11 +36,10 @@ class HomeController extends AbstractController
         TagTransRepository $tagTransRepository,
         IngredeintTransRepository $ingredientTransRepository,
         Request $request,
-        MealTransRepository $mealTransRepository,
-        TagMealRepository $tags
+        MealTransRepository $mealTransRepository
     ) {
-        // filter by Category -  example:?category=1
 
+        // filter by Category -  example:?category=1
         if (isset($request->query->all()['category'])) {
             if ($request->get('category') == 'null') {
                 $findCategory = null;
@@ -82,7 +81,7 @@ class HomeController extends AbstractController
             return $this->returnJson($meals, $meta, $links);
         } // filter by Tags -  example:?tags=2,3
         elseif (isset($request->query->all()['tags'])) {
-            // check if isset GET paramater diff_time  example for test : diff_time = 1549753200
+            // check if isset GET paramater diff_time
             if (isset($request->query->all()['diff_time'])) {
                 if ($request->get('diff_time') > 0) {
                     $tags = explode(',', $request->get('tags'));
@@ -215,8 +214,27 @@ class HomeController extends AbstractController
                 'itemsPerPage' => $mealJson->getItemNumberPerPage(),
                 'totalPages' => $mealJson->getPageCount()
             );
+
+
+            $path = new Paths($_SERVER['REQUEST_URI']);
+            if ($mealJson->getCurrentPageNumber() < 2) {
+                $prev = null;
+            } else {
+                $path->editQuery('page', $mealJson->getCurrentPageNumber()-1);
+                $prev = $_SERVER['HTTP_HOST'].$path->returnUrl();
+            }
+            if ($mealJson->getCurrentPageNumber() == $mealJson->getPageCount()) {
+                $next = null;
+            } else {
+                $path->editQuery('page', $mealJson->getCurrentPageNumber()+1);
+                $next = $_SERVER['HTTP_HOST'].$path->returnUrl();
+            }
+
             $links = array(
-                'self' => $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']
+                'prev' => $prev,
+                'self' => $_SERVER['HTTP_HOST'].$path->returnUrl(),
+                'next' => $next
+
             );
 
             return $this->returnJson($meal, $meta, $links);
