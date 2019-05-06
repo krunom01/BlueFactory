@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\MealRepository;
 use App\Repository\CategoryTransRepository;
 use App\Repository\MealTransRepository;
+use App\Repository\TagMealRepository;
 use App\Repository\TagTransRepository;
 use App\Repository\IngredeintTransRepository;
 use Knp\Component\Pager\PaginatorInterface;
@@ -25,6 +26,7 @@ class HomeController extends AbstractController
      * @param TagTransRepository $tagTransRepository
      * @param IngredeintTransRepository $ingredientTransRepository
      * @param PaginatorInterface $paginator
+     * @param TagMealRepository $tags
      * @return Response
      */
     public function index(
@@ -34,32 +36,58 @@ class HomeController extends AbstractController
         TagTransRepository $tagTransRepository,
         IngredeintTransRepository $ingredientTransRepository,
         Request $request,
-        MealTransRepository $mealTransRepository
+        MealTransRepository $mealTransRepository,
+        TagMealRepository $tags
     ) {
         // filter by Category -  example:?category=1
 
         if (isset($request->query->all()['category'])) {
-            $mealsWithCategories = $mealRepository->findBy(['category' => $request->get('category')]);
-
-            $this->validator($mealsWithCategories);
-
+            if ($request->get('category') == 'null') {
+                $findCategory = null;
+            } else {
+                $findCategory = $request->query->all()['category'];
+            }
+            // find meals where category is not null or is null and get results
+            if ($request->get('category') == '!null') {
+                $mealsWithCategories = $mealRepository->getMealWhereCategoryNotNull();
+            } else {
+                $mealsWithCategories = $mealRepository->findBy(['category' => $findCategory]);
+            }
             $mealsWithCategories = $paginator->paginate(
                 $mealsWithCategories, /* query NOT result */
                 $request->query->getInt('page', 1)/*page number*/,
                 $request->query->getInt('per_page', 10)/*limit per page*/
             );
+            if (empty($mealsWithCategories->getItems())) {
+                echo "wrong values";
+                exit;
+            }
             $meals = [];
             foreach ($mealsWithCategories as $key) {
-                $meals[] = $key->getMealsByGet();
+                if ($request->get('category') == 'null') {
+                    $meals[] = $key->getMealsWhereCategoryIsNull();
+                } else {
+                    $meals[] = $key->getMealsByGet();
+                }
             }
-            return $this->returnJson($meals);
+            $meta = array(
+                'currentPage' => $mealsWithCategories->getCurrentPageNumber(),
+                'totalItems' => $mealsWithCategories->getTotalItemCount(),
+                'itemsPerPage' => $mealsWithCategories->getItemNumberPerPage(),
+                'totalPages' => $mealsWithCategories->getPageCount()
+            );
+            $links = array(
+                'self' => $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']
+            );
+            return $this->returnJson($meals, $meta, $links);
         } // filter by Tags -  example:?tags=2,3
         elseif (isset($request->query->all()['tags'])) {
             // check if isset GET paramater diff_time  example for test : diff_time = 1549753200
             if (isset($request->query->all()['diff_time'])) {
                 if ($request->get('diff_time') > 0) {
+                    $tags = explode(',', $request->get('tags'));
                     $mealJson = $mealRepository->getMealByTagsTime(
-                        $request->get('tags'),
+                        $tags,
                         date('Y-m-d', $request->get('diff_time'))
                     );
                 } else {
@@ -67,7 +95,9 @@ class HomeController extends AbstractController
                     exit;
                 }
             } else {
-                $mealJson = $mealRepository->getMealByTags($request->get('tags'));
+                $tags = explode(',', $request->get('tags'));
+                $mealJson = $mealRepository->getMealByTags($tags);
+
             }
 
             // meals paginator
@@ -86,19 +116,24 @@ class HomeController extends AbstractController
                         'meal' => $key->getId(),
                         'languageCode' => $request->get('lang')
                     ]);
-
-                    $categoryTrans = $categoryTransRepository->findOneBy([
-                        'category' => $key->getCategory()->getId(),
-                        'languageCode' => $request->get('lang')
-                    ]);
+                    if (!empty($key->getCategory())) {
+                        $categoryTrans = $categoryTransRepository->findOneBy([
+                            'category' => $key->getCategory()->getId(),
+                            'languageCode' => $request->get('lang')
+                        ]);
+                    }
                     $category = null;
                     $tags = [];
                     $ingredients = [];
-                    $category = array(
-                        'category-ID' => $key->getCategory()->getId(),
-                        'category-Title' => $categoryTrans->getTranslation(),
-                        'category-Slug' => $key->getCategory()->getSlug()
-                    );
+                    if (empty($key->getCategory())) {
+                        $category = 'Meal dont have category';
+                    } else {
+                        $category = array(
+                            'category-ID' => $key->getCategory()->getId(),
+                            'category-Title' => $categoryTrans->getTranslation(),
+                            'category-Slug' => $key->getCategory()->getSlug()
+                        );
+                    }
                     foreach ($key->getTags() as $tag) {
                         $tagTrans = $tagTransRepository->findOneBy([
                             'tag' => $tag['ID-Tag'],
@@ -155,12 +190,15 @@ class HomeController extends AbstractController
                     $tags = $key->getTags();
                     $ingredients = $key->getIngredients();
                     $category = null;
-
-                    $category = array(
-                        'category-ID' => $key->getCategory()->getId(),
-                        'category-Title' => $key->getCategory()->getTitle(),
-                        'category-Slug' => $key->getCategory()->getSlug()
-                    );
+                    if (empty($key->getCategory())) {
+                        $category = 'Meal dont have category';
+                    } else {
+                        $category = array(
+                            'category-ID' => $key->getCategory()->getId(),
+                            'category-Title' => $key->getCategory()->getTitle(),
+                            'category-Slug' => $key->getCategory()->getSlug()
+                        );
+                    }
                     $meal[] = array(
                         'meal-Id' => $key->getId(),
                         'meal-Title' => $key->getTitle(),
@@ -171,7 +209,17 @@ class HomeController extends AbstractController
                     );
                 }
             }
-            return $this->returnJson($meal);
+            $meta = array(
+                'currentPage' => $mealJson->getCurrentPageNumber(),
+                'totalItems' => $mealJson->getTotalItemCount(),
+                'itemsPerPage' => $mealJson->getItemNumberPerPage(),
+                'totalPages' => $mealJson->getPageCount()
+            );
+            $links = array(
+                'self' => $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']
+            );
+
+            return $this->returnJson($meal, $meta, $links);
         } else {
             return $this->render('test.html.twig');
         }
@@ -179,11 +227,17 @@ class HomeController extends AbstractController
 
     /**
      * @param $data
+     * @param $meta
+     * @param $links
      * @return JsonResponse
      */
-    public function returnJson($data)
+    public function returnJson($data, $meta, $links)
     {
-        $response = new JsonResponse(['data' => $data,]);
+        $response = new JsonResponse([
+            'meta' => $meta,
+            'data' => $data,
+            'links' => $links
+            ]);
         $response->setEncodingOptions($response->getEncodingOptions() | JSON_PRETTY_PRINT);
         return $response;
     }

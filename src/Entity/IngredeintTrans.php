@@ -41,7 +41,7 @@ class IngredeintTrans
         return $this->ingredient;
     }
 
-    public function setIngredient(int $ingredient): self
+    public function setIngredient($ingredient): self
     {
         $this->ingredient = $ingredient;
 

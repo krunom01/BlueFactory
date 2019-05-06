@@ -1,0 +1,116 @@
+App\Entity\Category:
+  category_{1..10}:
+    title: Naslov kategorije <current()>
+    slug: CatSlug<current()>
+
+App\Entity\Languages:
+  languages_es:
+    name: spanish
+    code: es
+  languages_de:
+    name: deutsch
+    code: de
+  languages_hr:
+    name: croatian
+    code: hr
+
+App\Entity\CategoryTrans:
+  categoryTrans_es{@category_*}:
+    category: <current()>
+    translation: prijevod kategorije  na ES
+    language_code : es
+  categoryTrans_de{@category_*}:
+    category: <current()>
+    translation: prijevod kategorije na DE
+    language_code: de
+  categoryTrans_hr{@category_*}:
+    category: <current()>
+    translation: prijevod kategorije na HR
+    language_code: hr
+
+App\Entity\Meal:
+  meal_{1..10}:
+    category: '80%? @category_*'
+    title: Naslov jela <current()>
+    desctription: Opis jela <current()>
+    status: <randomElement(['created','updated','deleted'])>
+    created_at: <dateTimeBetween("-30 days", "now")>
+    updated_at: <dateTimeBetween("now", "+2 days")>
+    deleted_at: <dateTimeBetween("+2days", "+4 days")>
+
+App\Entity\MealTrans:
+  mealTrans_es{@meal_*}:
+    category: <current()>
+    translation: prijevod jela na ES
+    language_code : es
+  mealTrans_de{@meal_*}:
+    category: <current()>
+    translation: prijevod jela na DE
+    language_code: de
+  mealTrans_hr{@meal_*}:
+    category: <current()>
+    translation: prijevod jela na HR
+    language_code: hr
+
+App\Entity\Ingredient:
+  ingredeint_{1..10}:
+    title: Naslov sastojka <current()>
+    slug: Sa.Slug<current()>
+
+App\Entity\IngredeintTrans:
+  ingredeintTrans_es{@ingredeint_*}:
+    ingredient: <current()>
+    translation: prijevod jela na ES
+    language_code : es
+  ingredeintTrans_de{@ingredeint_*}:
+    ingredient: <current()>
+    translation: prijevod jela na DE
+    language_code: de
+  ingredeintTrans_hr{@ingredeint_*}:
+    ingredient: <current()>
+    translation: prijevod jela na HR
+    language_code: hr
+
+App\Entity\Tag:
+  tag_{1..10}:
+    title: Naslov taga <current()>
+    slug: Tag-Slug-<current()>
+
+App\Entity\TagTrans:
+  tagTrans_es{@tag_*}:
+    tag: <current()>
+    translation: prijevod taga na ES
+    language_code : es
+  tagTrans_de{@tag_*}:
+    tag: <current()>
+    translation: prijevod taga na DE
+    language_code: de
+  tagTrans_hr{@tag_*}:
+    tag: <current()>
+    translation: prijevod taga na HR
+    language_code: hr
+
+App\Entity\IngredientMeal:
+  IngredientMeal{@meal_*}:
+    meal: <current()>
+    ingredient: '@ingredeint_*'
+  IngredientMeal_{@meal_*}:
+    meal: <current()>
+    ingredient: '@ingredeint_*'
+
+App\Entity\TagMeal:
+  TagMeal_{@meal_*}:
+    meal: <current()>
+    tag: '@tag_*'
+  TagMeal{@meal_*}:
+    meal: <current()>
+    tag: '@tag_*'
+
+
+
+
+
+
+
+
+

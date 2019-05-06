@@ -41,7 +41,7 @@ class TagTrans
         return $this->tag;
     }
 
-    public function setTag(int $tag): self
+    public function setTag($tag): self
     {
         $this->tag = $tag;
 

@@ -19,22 +19,17 @@ class TagMealRepository extends ServiceEntityRepository
         parent::__construct($registry, TagMeal::class);
     }
 
-    // /**
-    //  * @return TagMeal[] Returns an array of TagMeal objects
-    //  */
-    /*
-    public function findByExampleField($value)
+
+    public function getMealByTags($tag)
     {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
+
+        return $this->createQueryBuilder('b')
+            ->where('b.tag IN (:tag)')
+            ->setParameter('tag', array($tag))
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult(\Doctrine\ORM\Query::HYDRATE_OBJECT);
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?TagMeal

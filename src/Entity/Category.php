@@ -2,8 +2,12 @@
 
 namespace App\Entity;
 
+use App\Entity\MealTrans;
 use Doctrine\ORM\Mapping as ORM;
+
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Doctrine\ORM\EntityManagerInterface;
+
 
 
 /**

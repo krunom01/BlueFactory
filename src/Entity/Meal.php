@@ -160,7 +160,7 @@ class Meal
         return $this->category;
     }
 
-    public function setCategory(int $category): self
+    public function setCategory($category): self
     {
         $this->category = $category;
 
@@ -250,6 +250,20 @@ class Meal
                 'Category-Title' => $this->getCategory()->getTitle(),
                 'Category-Slug' => $this->getCategory()->getSlug()
             ],
+            'Tags' => $this->getTags(),
+            'Ingridients' => $this->getIngredients()
+        ];
+    }
+    /**
+     * @return array
+     */
+    public function getMealsWhereCategoryIsNull()
+    {
+
+        return [
+            'ID-Meal' => $this->getId(),
+            'Title-Meal' => $this->getTitle(),
+            'Status-Meal' => $this->getStatus(),
             'Tags' => $this->getTags(),
             'Ingridients' => $this->getIngredients()
         ];
