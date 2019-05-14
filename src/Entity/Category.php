@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Entity\MealTrans;
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\Criteria;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -91,11 +91,30 @@ class Category
     {
         $this->categoryTrans = $categoryTrans;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCategoryTrans()
+    {
+        return $this->categoryTrans;
+    }
     /**
      * @param mixed $meals
      */
     public function setMeals($meals): void
     {
         $this->meals = $meals;
+    }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function getExpertScientists($value)
+    {
+        $criteria = Criteria::create()
+            ->andWhere(Criteria::expr()->gt('translation', $value));
+        return $this->getCategoryTrans()->matching($criteria);
     }
 }

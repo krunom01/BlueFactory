@@ -5,7 +5,6 @@ namespace App\Repository;
 use App\Entity\Meal;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * @method Meal|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,20 +18,10 @@ class MealRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Meal::class);
     }
-    public function findById($value)
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.id = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getArrayResult()
-            ;
-    }
 
     public function getMealByTags($tag)
     {
+        $tag = explode(',', $tag);
         return $this->createQueryBuilder('b')
             ->innerJoin('App\Entity\TagMeal', 'co', 'WITH', 'co.meal = b.id')
             ->where('co.tag IN (:tag)')
@@ -42,6 +31,8 @@ class MealRepository extends ServiceEntityRepository
     }
     public function getMealByTagsTime($tag, $time)
     {
+        $time = date('Y-m-d', $time);
+        $tag = explode(',', $tag);
         return $this->createQueryBuilder('b')
             ->innerJoin('App\Entity\TagMeal', 'co', 'WITH', 'co.meal = b.id')
             ->andWhere('co.tag IN (:tag)')
@@ -52,11 +43,56 @@ class MealRepository extends ServiceEntityRepository
             ->getResult(\Doctrine\ORM\Query::HYDRATE_OBJECT);
     }
 
-    public function getMealWhereCategoryNotNull()
+    public function getMealsByCategory($value)
     {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.category IS NOT NULL')
-            ->getQuery()
-            ->getResult(\Doctrine\ORM\Query::HYDRATE_OBJECT);
+
+        if ($value == 'null') {
+            $meals = $this->createQueryBuilder('m')
+                ->andWhere('m.category IS  NULL')
+                ->getQuery()
+                ->getResult(\Doctrine\ORM\Query::HYDRATE_OBJECT);
+        } elseif ($value == '!null') {
+            $meals = $this->createQueryBuilder('m')
+                ->andWhere('m.category IS NOT NULL')
+                ->getQuery()
+                ->getResult(\Doctrine\ORM\Query::HYDRATE_OBJECT);
+        } else {
+            $meals = $this->createQueryBuilder('m')
+                ->andWhere('m.category = :value')
+                ->setParameter('value', $value)
+                ->getQuery()
+                ->getResult(\Doctrine\ORM\Query::HYDRATE_OBJECT);
+        }
+        return $meals;
+    }
+    public function getMealsByCategoryTime($value, $time)
+    {
+
+        $time = date('Y-m-d', $time);
+
+        if ($value == 'null') {
+            $meals = $this->createQueryBuilder('m')
+                ->andWhere('m.category IS  NULL')
+                ->andWhere('m.created_at > :time')
+                ->setParameter('time', $time)
+                ->getQuery()
+                ->getResult(\Doctrine\ORM\Query::HYDRATE_OBJECT);
+        } elseif ($value == '!null') {
+            $meals = $this->createQueryBuilder('m')
+                ->andWhere('m.category IS NOT NULL')
+                ->andWhere('m.created_at > :time')
+                ->setParameter('time', $time)
+                ->getQuery()
+                ->getResult(\Doctrine\ORM\Query::HYDRATE_OBJECT);
+        } else {
+            $meals = $this->createQueryBuilder('m')
+                ->andWhere('m.category = :value')
+                ->andWhere('m.created_at > :time')
+                ->setParameter('value', $value)
+                ->setParameter('time', $time)
+                ->getQuery()
+                ->getResult(\Doctrine\ORM\Query::HYDRATE_OBJECT);
+        }
+        return $meals;
     }
 }

@@ -2,22 +2,23 @@
 
 namespace App\Entity;
 
+use App\Repository\MealRepository;
+use Doctrine\Common\Collections\Criteria;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
-
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MealRepository")
  */
 class Meal
 {
-    /**
-     * Meal constructor.
-     */
+
     public function __construct()
     {
         $this->tags = new ArrayCollection();
         $this->ingredients = new ArrayCollection();
+        $this->mealTrans = new ArrayCollection();
     }
 
     /**
@@ -176,6 +177,13 @@ class Meal
     }
 
     /**
+     * @return ArrayCollection
+     */
+    public function getMealTrans()
+    {
+        return $this->mealTrans;
+    }
+    /**
      * @return array
      */
     public function getTags()
@@ -219,66 +227,6 @@ class Meal
         } else {
             return $ingredients;
         }
-    }
-    /**
-     * @param ArrayCollection|IngredientMeal $intMeal
-     */
-    public function setIngredients(ArrayCollection $intMeal)
-    {
-        foreach ($intMeal as $int) {
-            /**
-             * @var IngredientMeal $newIntMeal
-             */
-            $newIntMeal = new IngredientMeal();
-            $newIntMeal->setMeal($this);
-            $newIntMeal->setIngredient($int);
-            $this->ingredients[] = $newIntMeal;
-        }
-    }
-    /**
-     * @return array
-     */
-    public function getMealsByGet()
-    {
-
-        return [
-            'ID-Meal' => $this->getId(),
-            'Title-Meal' => $this->getTitle(),
-            'Status-Meal' => $this->getStatus(),
-            'Category' => [
-                'Category-ID' => $this->getCategory()->getId(),
-                'Category-Title' => $this->getCategory()->getTitle(),
-                'Category-Slug' => $this->getCategory()->getSlug()
-            ],
-            'Tags' => $this->getTags(),
-            'Ingridients' => $this->getIngredients()
-        ];
-    }
-    /**
-     * @return array
-     */
-    public function getMealsWhereCategoryIsNull()
-    {
-
-        return [
-            'ID-Meal' => $this->getId(),
-            'Title-Meal' => $this->getTitle(),
-            'Status-Meal' => $this->getStatus(),
-            'Tags' => $this->getTags(),
-            'Ingridients' => $this->getIngredients()
-        ];
-    }
-    /**
-     * @return array
-     */
-    public function getMeal()
-    {
-
-        return [
-            'ID-Meal' => $this->getId(),
-            'Title-Meal' => $this->getTitle(),
-            'Status-Meal' => $this->getStatus(),
-        ];
     }
 
 }

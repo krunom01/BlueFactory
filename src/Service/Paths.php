@@ -46,6 +46,4 @@ class Paths
     {
         $this->url = parse_url($_SERVER['REQUEST_URI']);
     }
-
-
 }
